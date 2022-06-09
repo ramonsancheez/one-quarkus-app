@@ -3,6 +3,8 @@ package edu.poniperro.onequarkusapp;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
+import edu.poniperro.onequarkusapp.dominio.Orden;
+import edu.poniperro.onequarkusapp.dominio.Usuaria;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import edu.poniperro.onequarkusapp.dominio.Item;
@@ -45,13 +47,13 @@ public class ServiceTest {
 //     * Completa la definicion y el mapping
 //     * de la clase Usuaria a la tabla t_users
 //     */
-//    @Test
-//    public void test_mapping_usuaria() {
-//        Usuaria elfo = em.find(Usuaria.class, "Doobey");
-//        Assertions.assertThat(elfo).isNotNull();
-//        Assertions.assertThat(elfo.getNombre()).isEqualTo("Doobey");
-//        Assertions.assertThat(elfo.getDestreza()).isEqualTo(15);
-//    }
+    @Test
+    public void test_mapping_usuaria() {
+        Usuaria elfo = em.find(Usuaria.class, "Doobey");
+        Assertions.assertThat(elfo).isNotNull();
+        Assertions.assertThat(elfo.getNombre()).isEqualTo("Doobey");
+        Assertions.assertThat(elfo.getDestreza()).isEqualTo(15);
+    }
 //
 //    /**
 //     * Completa la definicion y el mapping
