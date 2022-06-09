@@ -3,13 +3,12 @@ package edu.poniperro.onequarkusapp;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
+import javax.inject.*;
 import edu.poniperro.onequarkusapp.dominio.Orden;
 import edu.poniperro.onequarkusapp.dominio.Usuaria;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import edu.poniperro.onequarkusapp.dominio.Item;
-//import edu.poniperro.onequarkusapp.dominio.Orden;
-//import edu.poniperro.onequarkusapp.dominio.Usuaria;
 
 import io.quarkus.test.junit.QuarkusTest;
 
@@ -19,8 +18,8 @@ public class ServiceTest {
     @PersistenceContext
     EntityManager em;
 
-//    @Inject
-//    ServiceOlli servicio;
+    @Inject
+    ServiceOlli servicio;
 //
 //    /**
 //     * MAPPINGS de la entidades a las tablas de la BBDD.
@@ -75,10 +74,10 @@ public class ServiceTest {
 //     * que es una dependencia Quarkus
 //     */
 //
-//    @Test
-//    public void test_inyeccion_servicio() {
-//        Assertions.assertThat(servicio).isNotNull();
-//    }
+    @Test
+    public void test_inyeccion_servicio() {
+        Assertions.assertThat(servicio).isNotNull();
+    }
 //
 //    /**
 //     * Implementa el metodo cargaUsuaria del servicio.
@@ -86,14 +85,14 @@ public class ServiceTest {
 //     * Si no existe, devuelve un objeto usuaria con sus propiedades
 //     * y valores como se indica en los casos test.
 //     */
-//    @Test
-//    public void test_carga_usuaria() {
-//        Assertions.assertThat(servicio).isNotNull();
-//        Usuaria elfo = servicio.cargaUsuaria("Doobey");
-//        Assertions.assertThat(elfo).isNotNull();
-//        Assertions.assertThat(elfo.getNombre()).isEqualTo("Doobey");
-//        Assertions.assertThat(elfo.getDestreza()).isEqualTo(15);
-//    }
+    @Test
+    public void test_carga_usuaria() {
+        Assertions.assertThat(servicio).isNotNull();
+        Usuaria elfo = servicio.cargaUsuaria("Doobey");
+        Assertions.assertThat(elfo).isNotNull();
+        Assertions.assertThat(elfo.getNombre()).isEqualTo("Doobey");
+        Assertions.assertThat(elfo.getDestreza()).isEqualTo(15);
+    }
 //
 //    @Test
 //    public void test_carga_usuaria_no_existe() {
