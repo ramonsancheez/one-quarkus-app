@@ -13,11 +13,20 @@ import javax.persistence.Table;
 public class Item extends PanacheEntityBase {
     @Id
     @Column(name = "item_nom")
-    private String nombre = "";
+    private String nombre;
     @Column(name = "item_prop")
-    private Integer quality = 0;
+    private Integer quality;
     @Column(name = "item_tipo")
-    private String tipo = "";
+    private String tipo;
+
+    public Item() {
+    }
+
+    public Item(String nombre, Integer quality, String tipo) {
+        this.nombre = nombre;
+        this.quality = quality;
+        this.tipo = tipo;
+    }
 
     public String getNombre() {
         return nombre;
@@ -42,4 +51,5 @@ public class Item extends PanacheEntityBase {
     public void setTipo(String tipo) {
         this.tipo = tipo;
     }
+
 }

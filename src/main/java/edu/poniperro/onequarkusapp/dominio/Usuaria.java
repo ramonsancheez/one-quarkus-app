@@ -16,6 +16,14 @@ public class Usuaria extends PanacheEntityBase {
     @Column(name = "user_prop")
     private Integer destreza;
 
+    public Usuaria() {
+    }
+
+    public Usuaria(String nombre, Integer destreza) {
+        this.nombre = nombre;
+        this.destreza = destreza;
+    }
+
     public String getNombre() {
         return nombre;
     }
@@ -31,4 +39,5 @@ public class Usuaria extends PanacheEntityBase {
     public void setdestreza(Integer prop) {
         this.destreza = destreza;
     }
+
 }
