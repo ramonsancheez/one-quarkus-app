@@ -1,10 +1,12 @@
 package edu.poniperro.onequarkusapp.dominio;
 
+import io.quarkus.hibernate.orm.panache.PanacheEntityBase;
+
 import javax.persistence.*;
 
 @Entity
 @Table(name = "t_ordenes")
-public class Orden {
+public class Orden extends PanacheEntityBase {
     @Id
     @Column(name = "ord_id")
     private Long id;

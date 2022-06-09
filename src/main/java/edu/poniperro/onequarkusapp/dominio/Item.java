@@ -1,5 +1,8 @@
 package edu.poniperro.onequarkusapp.dominio;
 
+import io.quarkus.hibernate.orm.panache.PanacheEntity;
+import io.quarkus.hibernate.orm.panache.PanacheEntityBase;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -7,7 +10,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "t_items")
-public class Item {
+public class Item extends PanacheEntityBase {
     @Id
     @Column(name = "item_nom")
     private String nombre = "";
